@@ -26,34 +26,46 @@ cd kittygram
 ```
 
 В папку проекта скачиваем файл docker-compose.production.yml и запускаем его:
-`sudo docker compose -f docker-compose.production.yml up`
-
+```
+sudo docker compose -f docker-compose.production.yml up
+```
 Произойдет скачивание образов, создание и включение контейнеров, создание томов и сети.
 
 И далее проект доступен на:
+
 https://kittygramoksiasti.ddns.net/
 
 ## Запуск проекта из репозитория GitHub
 Клонируем себе репозиторий:
-`git clone git@github.com:OksanaAstashkina/kittygram_final.git`
+```
+git clone git@github.com:OksanaAstashkina/kittygram_final.git
+```
 
 Выполняем запуск:
-`sudo docker compose -f docker-compose.yml up`
+```
+sudo docker compose -f docker-compose.yml up
+```
 
 После запуска необходимо выполнить сбор статистики и миграции бэкенда. Статистика фронтенда собирается во время запуска контейнера, после чего он останавливается.
 
-`sudo docker compose -f docker-compose.yml exec backend python manage.py migrate`
+```
+sudo docker compose -f docker-compose.yml exec backend python manage.py migrate
 
-`sudo docker compose -f docker-compose.yml exec backend python manage.py collectstatic`
+sudo docker compose -f docker-compose.yml exec backend python manage.py collectstatic
 
-`sudo docker compose -f docker-compose.yml exec backend cp -r /app/collected_static/. /backend_static/static/`
+sudo docker compose -f docker-compose.yml exec backend cp -r /app/collected_static/. /backend_static/static/
+```
 
-И далее проект доступен на:
+А далее проект доступен на:
+
 http://localhost:9000/
 
 ## Остановка оркестра контейнеров
+
 В окне, где был запуск Ctrl+С или в другом окне:
-`sudo docker compose -f [имя-файла-docker-compose.yml] down`
+```
+sudo docker compose -f [имя-файла-docker-compose.yml] down
+```
 
 ***
 ## *Автор*
