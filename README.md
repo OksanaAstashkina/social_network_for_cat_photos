@@ -68,4 +68,4 @@ sudo docker compose -f [имя-файла-docker-compose.yml] down
 Оксана Асташкина - [GitHub](https://github.com/OksanaAstashkina)
 
 ### *Дата создания*
-Март, 2023 г.
+Июль, 2023 г.
